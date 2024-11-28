@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
+import {A} from './inheritance.sol';
+
 library StringUtil {
     bytes16 private constant _HEX_SYMBOLS = "0123456789abcdef";
 
@@ -39,6 +41,10 @@ contract TestLibrary {
 
     function testUsing(uint256 value) external pure returns(string memory) {
         return value.toHexString();
+    }
+
+    function testA(uint256 value) external pure returns(string memory) {
+        return A.foo();
     }
 
 }
