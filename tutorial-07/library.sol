@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+pragma solidity 0.8.7;
 
 import {A} from './inheritance.sol';
 
@@ -43,8 +43,9 @@ contract TestLibrary {
         return value.toHexString();
     }
 
-    function testA(uint256 value) external pure returns(string memory) {
-        return A.foo();
+    function testA() external returns(string memory) {
+        A a = new A();
+        return a.foo();
     }
 
 }
